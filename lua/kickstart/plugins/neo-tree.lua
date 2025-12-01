@@ -16,8 +16,10 @@ return {
   opts = {
     filesystem = {
       window = {
+        width = 35,
         mappings = {
           ['\\'] = 'close_window',
+          ['t'] = 'open_tabnew',
         },
       },
     },

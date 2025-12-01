@@ -71,25 +71,4 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- HTML specific indentation
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'html',
-  callback = function()
-    vim.opt_local.shiftwidth = 2 -- Number of spaces for each indentation level
-    vim.opt_local.tabstop = 2 -- Number of spaces a tab represents
-    vim.opt_local.softtabstop = 2 -- Number of spaces for tab in insert mode
-    vim.opt_local.expandtab = true -- Use spaces instead of tabs
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'css',
-  callback = function()
-    vim.opt_local.shiftwidth = 2 -- Number of spaces for each indentation level
-    vim.opt_local.tabstop = 2 -- Number of spaces a tab represents
-    vim.opt_local.softtabstop = 2 -- Number of spaces for tab in insert mode
-    vim.opt_local.expandtab = true -- Use spaces instead of tabs
-  end,
-})
-
 -- vim: ts=2 sts=2 sw=2 et
