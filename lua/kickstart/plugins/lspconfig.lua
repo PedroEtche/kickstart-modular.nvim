@@ -242,7 +242,6 @@ return {
       -- To check the current status of installed tools and/or manually install
       -- other tools, you can run
       --    :Mason
-      --
       -- You can press `g?` for help in this menu.
       --
       -- `mason` had to be setup earlier: to configure its options see the
@@ -257,6 +256,7 @@ return {
         'css-lsp',
         'html-lsp',
         'markdownlint',
+        'gofumpt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

@@ -34,6 +34,7 @@ return {
         html = { 'prettier' },
         css = { 'prettier' },
         javascript = { 'prettier' },
+        go = { 'gofumpt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
