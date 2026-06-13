@@ -257,6 +257,7 @@ return {
         'html-lsp',
         'markdownlint',
         'gofumpt',
+        'ruff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
