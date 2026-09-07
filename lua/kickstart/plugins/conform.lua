@@ -29,12 +29,23 @@ return {
           }
         end
       end,
+
+      formatters = {
+        odinfmt = {
+          -- Change where to find the command if it isn't in your path.
+          command = '$HOME/ols/odinfmt',
+          args = { '-stdin' },
+          stdin = true,
+        },
+      },
+
       formatters_by_ft = {
         lua = { 'stylua' },
         html = { 'prettier' },
         css = { 'prettier' },
         javascript = { 'prettier' },
         go = { 'gofumpt' },
+        odin = { 'odinfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

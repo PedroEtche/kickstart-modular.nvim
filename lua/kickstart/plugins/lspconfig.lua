@@ -221,6 +221,14 @@ return {
         -- ts_ls = {},
         --
 
+        ols = {
+          mason = false,
+          cmd = { '$HOME/ols' },
+          settings = {
+            odin_command = '$HOME/ols',
+          },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
