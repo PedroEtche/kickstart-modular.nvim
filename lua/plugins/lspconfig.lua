@@ -51,14 +51,14 @@ local function lsp_on_attach(ev)
 	local function opts(desc)
 		return { noremap = true, silent = true, buffer = bufnr, desc = desc }
 	end
+
 	-- keymaps de LSP: todos con prefijo g (buffer-local, pisan los gr* globales de Neovim)
 	local function map(keys, func, desc, mode)
 		vim.keymap.set(mode or "n", keys, func, opts("LSP: " .. desc))
 	end
 	local telescope = require("telescope.builtin")
 
-	map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-	map("grd", telescope.lsp_definitions, "[G]oto [D]efinition (Telescope)")
+	map("grd", telescope.lsp_definitions, "[G]oto [D]efinition")
 	map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 	map("grv", function()
 		vim.cmd("vsplit")
