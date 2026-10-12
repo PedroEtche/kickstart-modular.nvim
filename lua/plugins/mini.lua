@@ -83,23 +83,27 @@ require("mini.diff").setup({
 	},
 })
 
-require("mini.git").setup({})
+local function map(keys, func, desc, mode)
+	vim.keymap.set(mode or "n", keys, func, { desc = desc })
+end
 
-require("mini.files").setup({})
-vim.keymap.set("n", "\\", function()
-	local MiniFiles = require("mini.files")
+local MiniFiles = require("mini.files")
+MiniFiles.setup({})
+
+map("\\", function()
 	-- close() devuelve nil si no había explorador abierto
 	if MiniFiles.close() == nil then
 		local path = vim.api.nvim_buf_get_name(0)
 		-- abre en el archivo actual; si el buffer no es un archivo en disco, en el cwd
 		MiniFiles.open(vim.uv.fs_stat(path) and path or nil)
 	end
-end, { desc = "Toggle mini.files" })
+end, "Files: toggle explorer")
 
 local MiniDiff = require("mini.diff")
-vim.keymap.set("n", "<leader>hp", function()
-	MiniDiff.toggle_overlay()
-end, { desc = "Preview diff overlay" })
-vim.keymap.set("n", "<leader>hb", function()
-	require("mini.git").show_at_cursor()
-end, { desc = "Git blame/show" })
+
+map("<leader>hp", MiniDiff.toggle_overlay, "Diff: preview overlay")
+
+local MiniGit = require("mini.git")
+MiniGit.setup({})
+
+map("<leader>hb", MiniGit.show_at_cursor, "Git: blame/show")
