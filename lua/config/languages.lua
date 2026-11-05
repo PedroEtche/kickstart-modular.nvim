@@ -57,6 +57,8 @@ M.list = {
 		},
 	},
 	{ name = "html", parser = "html", filetypes = { "html" }, efm = { "fmt:prettier_d" } },
+	-- markdown_inline: lo necesita render-markdown.nvim junto con markdown
+	{ name = "markdown_inline", parser = "markdown_inline" },
 	{ name = "css", parser = "css", filetypes = { "css" }, efm = { "fmt:prettier_d" } },
 	{
 		name = "javascript",

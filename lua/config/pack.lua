@@ -47,6 +47,7 @@ vim.pack.add({
 	},
 	"https://github.com/mrcjkb/rustaceanvim",
 	"https://github.com/folke/todo-comments.nvim.git",
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	{
 		src = "https://github.com/rose-pine/neovim",
 		name = "rose-pine",
